@@ -22,6 +22,7 @@
     <div>
       <button onclick="getPics()">getPictures</button>
       <button onclick="getBase64Pics()">getBase64Pics</button>
+      <button onclick="getCameraImage()">getCameraImage</button>
     </div>
   </div>
   <script type="text/javascript" src="cordova.js"></script>
@@ -94,6 +95,27 @@
         height: 400,
         outputType: imagePicker.OutputType.BASE64_STRING
       }
+      );
+    }
+
+    function getCameraImage() {
+			const options = {
+				correctOrientation: true,
+				destinationType: navigator.camera.DestinationType.FILE_URI,
+				encodingType: navigator.camera.EncodingType.JPEG,
+				mediaType: navigator.camera.MediaType.PICTURE,
+				quality: 80,
+				targetHeight: 1000,
+				targetWidth: 1000,
+			};
+      navigator.camera.getPicture(
+        function (result) {
+          console.log('Ok: ', result);
+        },
+        function (error) {
+          console.log('Error: ', error);
+        },
+        options,
       );
     }
 

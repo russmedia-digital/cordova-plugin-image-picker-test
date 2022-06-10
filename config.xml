@@ -8,4 +8,9 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <plugin name="cordova-plugin-image-picker" spec="https://github.com/russmedia-digital/cordova-plugin-image-picker">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="Access required"/>
+    </plugin>
+    <plugin name="cordova-plugin-camera" spec="6.0.0" />
+    <engine name="android" spec="10.1.1" />
 </widget>
